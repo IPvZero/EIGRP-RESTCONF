@@ -1,0 +1,35 @@
+---
+R1:
+  hostname: 192.168.31.101
+  groups:
+    - cisco_group
+  data:
+    configure:
+      router:
+        Cisco-IOS-XE-eigrp:eigrp:
+        - id: 1
+          network:
+          - number: 192.168.10.0
+            wild-card: 0.0.0.255
+          - number: 10.0.0.4
+            wild-card: 0.0.0.3
+          - number: 172.16.1.0
+            wild-card: 0.0.0.255
+
+
+R2:
+  hostname: 192.168.31.102
+  groups:
+    - cisco_group
+  data:
+    configure:
+      router:
+        Cisco-IOS-XE-eigrp:eigrp:
+        - id: 1
+          network:
+          - number: 192.168.20.0
+            wild-card: 0.0.0.255
+          - number: 10.0.0.0
+            wild-card: 0.0.0.3
+          - number: 172.16.10.0
+            wild-card: 0.0.0.255
